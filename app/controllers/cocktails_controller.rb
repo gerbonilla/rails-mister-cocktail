@@ -10,7 +10,6 @@ class CocktailsController < ApplicationController
   end
 
   def new
-    @ingredients = Ingredient.all
     @cocktail = Cocktail.new
   end
 

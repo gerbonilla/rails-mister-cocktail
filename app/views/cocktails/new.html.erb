@@ -1,19 +1,8 @@
 <h1>Señor Cocktail</h1>
 
-<%= form_for @cocktail do |f| %>
-  <%= f.text_field :name, placeholder: "Name for your cocktail" %>
-
-  <%= f.fields_for :doses do |p| %>
-    <div class="form-dose-ingredient">
-    <%= p.text_field :description, placeholder: "Dose" %>
-    <%= p.collection_select :ingredient_id, Ingredient.all.order(:name), :id, :name %>
-    </div>
-  <% end %>
-  <button type="button" onclick="addRow()"></button>
-  <%= f.submit %>
+<%= simple_form_for @cocktail do |f| %>
 
 <% end %>
-
 
 
 

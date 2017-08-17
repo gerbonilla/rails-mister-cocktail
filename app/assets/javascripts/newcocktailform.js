@@ -1,8 +1,8 @@
 
-$('#add-row-button').click(function(event) {
-  event.preventDefault()
-})
+// $('#add-row-button').click(function(event) {
+//   event.preventDefault()
+// })
 
-function addRow() {
+// function addRow() {
 
-}
+// }
