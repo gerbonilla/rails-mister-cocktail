@@ -1,3 +1,5 @@
+require 'NewCocktailForm'
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -8,12 +10,13 @@ class CocktailsController < ApplicationController
   end
 
   def new
+    @ingredients = Ingredient.all
     @cocktail = Cocktail.new
   end
 
   def create
-    @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
+    # @cocktail = Cocktail.new(cocktail_params)
+    # @cocktail.save
   end
 
   def delete
