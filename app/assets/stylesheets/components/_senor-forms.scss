@@ -1,0 +1,70 @@
+.doses-input {
+  display: flex;
+  height: 38px;
+  input, select {
+    background-color: #eceacd;
+    border: none;
+    box-shadow: none;
+    text-align: right;
+    &:active, &:hover {
+      outline: none !important;
+      text-decoration: none !important;
+    }
+  }
+  option {
+    font-family: $body-font;
+    font-size: 10px;
+  }
+}
+
+.doses-submit {
+  background-color: #eceacd;
+  border: none;
+  font-size: 20px;
+}
+
+.new-cocktails-input {
+  height: 250px;
+  input, select {
+    background-color: #eceacd;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    &:active, &:hover {
+      outline: none !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+.new-cocktail-submit {
+  background-color: #eceacd;
+  border: none;
+  font-size: 20px;
+}
+
+
+.attachinary_container{
+  margin-top: 20px;
+}
+
+
+.attachinary_container ul{
+  padding-left:0px;
+}
+
+.attachinary_container ul li{
+  position:relative;
+  display: inline-flex;
+}
+
+.attachinary_container ul li a{
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: rgba(0,0,0,.85);
+}
+
+

@@ -1,0 +1,22 @@
+.cocktail-card {
+  opacity: 0.8;
+  .cocktail-card-header {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    a {
+      font-size: 20px;
+    }
+  }
+  .cocktail-card-doses {
+    padding: 10px 0;
+    a {
+      font-size: 14px;
+      opacity: 0.5;
+    }
+  }
+
+}
+
+.cocktail-card.cocktail-index {
+  margin: 35px 0;
+}
+

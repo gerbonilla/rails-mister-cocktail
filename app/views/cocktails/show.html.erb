@@ -1,12 +1,46 @@
+<div class="senor-wrapper-content text-center">
+  <div class="senor-header" id="show-page-header">
+    <h1><%= link_to "Señor Cocktail", cocktails_path%></h1>
+  </div>
+</div>
 
+<br>
 
-<h3><%= @cocktail.name %></h3>
-<%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete %>
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+<div class="senor-wrapper-content text-center">
+  <div class="cocktail-card">
+    <div class="cocktail-card-header">
+      <h3><%= @cocktail.name %></h3>
+      <%= link_to "Add an ingredient", "#", id: "add-ingredient" %> |
+      <%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete %>
+    </div>
+    <br>
+    <div class="cocktail-card-doses">
+      <% @cocktail.doses.all.each do |d| %>
+      <p><%= d.description %>  <%= d.ingredient.name %><%= link_to " - Delete", dose_path(d), method: :delete %></p>
+      <% end %>
+      <%= simple_form_for [@cocktail, @dose], html: { style: "display: none"} do |f| %>
+      <div class="doses-input">
+        <%= f.input :description, label: false, placeholder: "Dose" %>
+        <%= f.input :ingredient_id, collection: Ingredient.all.order(:name), prompt: "Ingredient", label: false %>
+      </div>
+      <%= f.submit class: "doses-submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
 
-<br><br>
-
-<% @cocktail.doses.all.each do |d| %>
-  <p><%= d.description %>  <%= d.ingredient.name %></p>
-  <%= link_to "Delete", dose_path(d), method: :delete %>
+<% if @cocktail.photo? %>
+<div class="senor-wrapper-content text-center">
+  <div class="senor-photo-card">
+    <%= cl_image_tag @cocktail.photo.path, :effect=>"art:athena", width: 200, height: 300, crop: :fill %>
+  </div>
+</div>
 <% end %>
+
+<script>
+  $('a#add-ingredient').on('click', function(event) {
+    event.preventDefault();
+    $('form').toggle();
+  })
+</script>

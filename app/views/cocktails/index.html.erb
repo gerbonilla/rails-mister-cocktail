@@ -1,9 +1,11 @@
-
-<%= link_to "add new cocktail", new_cocktail_path %>
-<br>
-
-<% @cocktails.each do |i| %>
-  <div class="cocktail-card">
-  <%= link_to i.name, cocktail_path(i)  %>
+<div class="senor-wrapper-content text-center">
+  <div class="senor-header" id="link-page-header">
+    <h1><%= link_to "Señor Cocktail", cocktails_path %></h1>
+    <%= link_to "add new cocktail", new_cocktail_path, id: "cocktail-link" %>
   </div>
-<% end %>
+  <% @cocktails.each do |i| %>
+  <div class="cocktail-card cocktail-index">
+    <%= link_to i.name, cocktail_path(i) %>
+  </div>
+  <% end %>
+</div>

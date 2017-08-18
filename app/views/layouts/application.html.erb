@@ -7,10 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= cloudinary_js_config %>
 </head>
 
-<body>
-  <h1>Señor Cocktail</h1>
-  <%= yield %>
+<body background="<%= cl_image_path("hcltrynqjnkxbdqqortk", width: 1200, height: 660, crop: :fill) %>">
+  <div class="main-wrapper">
+    <%= yield %>
+  </div>
 </body>
 </html>

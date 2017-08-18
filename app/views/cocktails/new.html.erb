@@ -1,10 +1,16 @@
-<h3>Add a new cocktail</h3>
+<div class="senor-wrapper-content text-center">
+  <div class="senor-header">
+    <h1><%= link_to "Señor Cocktail", cocktails_path %></h1>
+  </div>
 
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-<% end %>
+  <%= simple_form_for @cocktail do |f| %>
+  <div class="new-cocktails-input">
+    <%= f.input :name, label: false, placeholder: "New Cocktail Name" %>
+    <%= f.input :photo, label: false, as: :attachinary %>
+  </div>
+  <%= f.submit class: "new-cocktail-submit" %>
+  <% end %>
 
 
 

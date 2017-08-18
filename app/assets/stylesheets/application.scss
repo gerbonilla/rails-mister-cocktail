@@ -13,3 +13,14 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-wrapper {
+  width: 400px;
+  margin: 60px auto;
+}
